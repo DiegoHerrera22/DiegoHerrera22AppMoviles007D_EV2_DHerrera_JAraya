@@ -21,6 +21,7 @@ import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.HomeSc
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.LoginScreen
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.RegisterScreen
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.ProductDetailScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +62,14 @@ fun AppNavigation() {
             arguments = listOf(navArgument("email") { type = NavType.StringType })
         ) { backStackEntry ->
             val email = backStackEntry.arguments?.getString("email")
-            HomeScreen(email = email)
+            HomeScreen(email = email, navController = navController)
+        }
+        composable(
+            route = "product/{id}",
+            arguments = listOf(navArgument("id") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val id = backStackEntry.arguments?.getString("id") ?: return@composable
+            ProductDetailScreen(productId = id, navController = navController) //  nueva pantalla del detalle del producto
         }
     }
 }

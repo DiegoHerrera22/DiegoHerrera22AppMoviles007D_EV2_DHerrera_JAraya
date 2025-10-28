@@ -18,11 +18,12 @@ import java.util.Locale
 fun ProductCard (
     product: Producto,
     onAddToCart: (Producto) -> Unit,
+    onClick: (Producto) -> Unit, //este de aqui es para ir a detalles
     modifier: Modifier = Modifier
 ) {
     val money = NumberFormat.getCurrencyInstance(Locale("es", "CL")).apply { maximumFractionDigits = 0 }
 
-    Card(
+    Card(onClick = { onClick(product) }, //se le puede hacer click
     modifier = modifier,
     elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {

@@ -11,4 +11,7 @@ object ProductRepository {
         Producto("p4", "Cupcakes Halloween", "Cupcakes tenebrosos para este dia especial", 3000, R.drawable.cupcakeshallowen)
 
     )
+
+    fun getById(id: String): Producto? =
+        getCatalog().firstOrNull { it.id == id }
 }

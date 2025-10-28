@@ -9,23 +9,25 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.model.Producto
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.viewmodel.CatalogViewModel
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.components.ProductCard
 import java.text.NumberFormat
 import java.util.Locale
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(email: String?) {
+fun HomeScreen(email: String?,navController: NavController) {
 
     val catalogVM: CatalogViewModel = viewModel()
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // 👇 Estado para saber qué producto se agregó últimamente
+    // Estado para saber qué producto se agregó últimamente
     var lastAdded by remember { mutableStateOf<Producto?>(null) }
 
-    // 👇 Cuando `lastAdded` cambia, se ejecuta este efecto y muestra el snackbar
+    //  Cuando `lastAdded` cambia, se ejecuta este efecto y muestra el snackbar
     LaunchedEffect(lastAdded) {
         lastAdded?.let { product ->
             snackbarHostState.showSnackbar("Agregado: ${product.name}")
@@ -74,8 +76,11 @@ fun HomeScreen(email: String?) {
                         onAddToCart = { added ->
                             catalogVM.addToCart(added)
 
-                            // 👇 Aquí actualizamos el estado
+                            // Aquí actualizamos el estado
                             lastAdded = added
+                        },
+                        onClick = { clicked ->
+                            navController.navigate("product/${clicked.id}")   // navegar al detalle
                         },
                         modifier = Modifier.fillMaxWidth()
                     )

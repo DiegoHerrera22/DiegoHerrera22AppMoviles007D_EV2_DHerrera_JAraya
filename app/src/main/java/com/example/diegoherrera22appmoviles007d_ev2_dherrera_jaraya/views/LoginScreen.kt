@@ -23,21 +23,35 @@ fun LoginScreen(navController: NavController, viewModel: AuthViewModel) {
         Text("Inicio de Sesión", style = MaterialTheme.typography.titleLarge)
 
         OutlinedTextField(value = email, onValueChange = { email = it }, label = { Text("Email") })
-        //le puse el tema de transformar la contraseña a oculto, para que no se vea
+
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
             label = { Text("Contraseña") },
             singleLine = true,
             visualTransformation = PasswordVisualTransformation(),
-            //modifier = Modifier.fillMaxWidth() //no me gusto como se veia, asi que lo cambie
         )
 
         Spacer(modifier = Modifier.height(10.dp))
 
         Button(onClick = {
-            if (viewModel.login(email, password)) {
-                navController.navigate("home/$email")
+            val ok = viewModel.login(email, password)
+            if (!ok) return@Button
+
+            val e = email.trim().lowercase()
+            val destination = when {
+                e.endsWith("@admin.cl") -> "backoffice"
+                e.endsWith("@duoc.cl")  -> "home/$email"   // mantiene tu ruta con parámetro
+                else -> {
+                    // si llega acá, el usuario existe pero con dominio no permitido
+                    // (idealmente esto no pasará porque RegisterScreen ya lo bloquea)
+                    viewModel.mensaje.value = "Dominio no permitido (usa @duoc.cl o @admin.cl)"
+                    return@Button
+                }
+            }
+
+            navController.navigate(destination) {
+                popUpTo("login") { inclusive = true }
             }
         }) {
             Text("Entrar")
@@ -50,8 +64,6 @@ fun LoginScreen(navController: NavController, viewModel: AuthViewModel) {
             modifier = Modifier.padding(top = 4.dp)
         ) {
             Text("¿No tienes cuenta? Regístrate")
-            }
-
-
+        }
     }
 }

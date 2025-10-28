@@ -20,64 +20,64 @@
 15-->[androidx.core:core:1.13.1] C:\Users\56989\.gradle\caches\transforms-4\099fe7f6161456fdc7a61f53c64732b4\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
 16
 17    <application
-17-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:5:5-26:19
+17-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:5:5-26:19
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 18-->[androidx.core:core:1.13.1] C:\Users\56989\.gradle\caches\transforms-4\099fe7f6161456fdc7a61f53c64732b4\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 19        android:debuggable="true"
 20        android:extractNativeLibs="true"
 21        android:icon="@mipmap/ic_launcher"
-21-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:7:9-43
+21-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:7:9-43
 22        android:label="Pastelería 1000 Sabores"
-22-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:6:9-48
+22-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:6:9-48
 23        android:roundIcon="@mipmap/ic_launcher_round"
-23-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:8:9-54
+23-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:8:9-54
 24        android:testOnly="true"
 25        android:theme="@style/Theme.Pasteleria1000Sabores" >
-25-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:9:9-59
+25-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:9:9-59
 26
 27        <!-- Activity principal que arranca la aplicación -->
 28        <activity
-28-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:11:9-16:20
+28-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:11:9-16:20
 29            android:name="com.example.pasteleria1000sabores.LoginActivity"
-29-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:11:19-48
+29-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:11:19-48
 30            android:exported="true" >
-30-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:11:49-72
+30-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:11:49-72
 31            <intent-filter>
-31-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:12:13-15:29
+31-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:12:13-15:29
 32                <action android:name="android.intent.action.MAIN" />
-32-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:13:17-69
-32-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:13:25-66
+32-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:13:17-69
+32-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:13:25-66
 33
 34                <category android:name="android.intent.category.LAUNCHER" />
-34-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:14:17-77
-34-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:14:27-74
+34-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:14:17-77
+34-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:14:27-74
 35            </intent-filter>
 36        </activity>
 37        <!-- Declaración de las demás pantallas -->
 38        <activity android:name="com.example.pasteleria1000sabores.RegisterActivity" />
-38-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:18:9-54
-38-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:18:19-51
+38-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:18:9-54
+38-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:18:19-51
 39        <activity android:name="com.example.pasteleria1000sabores.CatalogActivity" />
-39-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:19:9-53
-39-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:19:19-50
+39-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:19:9-53
+39-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:19:19-50
 40        <activity android:name="com.example.pasteleria1000sabores.ProductDetailActivity" />
-40-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:20:9-59
-40-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:20:19-56
+40-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:20:9-59
+40-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:20:19-56
 41        <activity android:name="com.example.pasteleria1000sabores.CartActivity" />
-41-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:21:9-50
-41-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:21:19-47
+41-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:21:9-50
+41-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:21:19-47
 42        <activity android:name="com.example.pasteleria1000sabores.SuccessActivity" />
-42-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:22:9-53
-42-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:22:19-50
+42-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:22:9-53
+42-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:22:19-50
 43        <activity android:name="com.example.pasteleria1000sabores.FailureActivity" />
-43-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:23:9-53
-43-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:23:19-50
+43-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:23:9-53
+43-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:23:19-50
 44        <activity android:name="com.example.pasteleria1000sabores.BackOfficeActivity" />
-44-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:24:9-56
-44-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:24:19-53
+44-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:24:9-56
+44-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:24:19-53
 45        <activity android:name="com.example.pasteleria1000sabores.AddProductActivity" />
-45-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:25:9-56
-45-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\pasteleria1000\app\src\main\AndroidManifest.xml:25:19-53
+45-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:25:9-56
+45-->C:\Users\56989\Desktop\PROGRA\semestre 4\appmoviles parcial2\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\app\src\main\AndroidManifest.xml:25:19-53
 46
 47        <provider
 47-->[androidx.emoji2:emoji2:1.3.0] C:\Users\56989\.gradle\caches\transforms-4\540d6eb30c8aeb129cfeafafa33669fd\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:24:9-32:20

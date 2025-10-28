@@ -56,10 +56,8 @@ fun HomeScreen(
                 title = { Text("Catálogo de Pastelería") },
                 actions = {
                     AssistChip(
-                        onClick = { /* TODO: CartScreen */ },
-                        label = {
-                            Text("Carrito: ${catalogVM.itemsCount()} • ${money.format(catalogVM.totalCLP())}")
-                        }
+                        onClick = { navController.navigate("cart") },
+                        label = { Text("Carrito: ${catalogVM.itemsCount()} • ${money.format(catalogVM.totalCLP())}") }
                     )
                 }
             )

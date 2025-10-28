@@ -24,6 +24,9 @@ import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.Regist
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.navigation
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.ProductDetailScreen
+import androidx.navigation.navigation
+import androidx.navigation.navArgument
+import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.CartScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,6 +86,10 @@ fun AppNavigation() {
                 }
                 val id = backStackEntry.arguments?.getString("id") ?: return@composable
                 ProductDetailScreen(productId = id, navController = navController, parentEntry = parentEntry)
+            }
+            composable("cart") { backStackEntry ->
+                val parentEntry = remember(backStackEntry) { navController.getBackStackEntry("shop") }
+                CartScreen(navController = navController, parentEntry = parentEntry)
             }
         }
     }

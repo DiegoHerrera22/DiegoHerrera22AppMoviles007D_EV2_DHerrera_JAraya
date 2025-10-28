@@ -17,7 +17,7 @@ class CatalogViewModel : ViewModel() {
     val products: List<Producto> = ProductRepository.getCatalog()
 
     // Mapa reactivo: productId -> CartLine
-    private val _cart: SnapshotStateMap<String, CartLine> = mutableStateMapOf()
+    private val _cart = mutableStateMapOf<String, CartLine>()
     val cartLines: List<CartLine> get() = _cart.values.toList()
 
     fun addToCart(product: Producto, amount: Int = 1) {
@@ -26,9 +26,8 @@ class CatalogViewModel : ViewModel() {
         if (line == null) {
             _cart[id] = CartLine(product, amount.coerceAtLeast(1))
         } else {
-            line.qty += amount
-            // disparo de recomposición: re-asignar la línea
-            _cart[id] = line.copy(qty = line.qty)
+            val newQty = line.qty + amount
+            _cart[id] = line.copy(qty = newQty) // <- re-asignación para notificar cambio
         }
     }
 
@@ -38,8 +37,7 @@ class CatalogViewModel : ViewModel() {
         if (newQty <= 0) {
             _cart.remove(productId)
         } else {
-            line.qty = newQty
-            _cart[productId] = line.copy(qty = line.qty)
+            _cart[productId] = line.copy(qty = newQty) // <- re-asignación
         }
     }
 

@@ -34,7 +34,10 @@ fun CartScreen(
     parentEntry: NavBackStackEntry
 ) {
     val catalogVM: CatalogViewModel = viewModel(parentEntry)
-    val lines = catalogVM.cartLines
+    val lines by remember {
+        derivedStateOf { catalogVM.cartLines } // se recalcula cuando cambia el estado del map
+    }
+
 
     val money = remember {
         NumberFormat.getCurrencyInstance(Locale("es","CL")).apply { maximumFractionDigits = 0 }

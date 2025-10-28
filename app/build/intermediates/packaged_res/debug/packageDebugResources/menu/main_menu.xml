@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/menu_home" android:title="Inicio" app:showAsAction="never" />
+    <item android:id="@+id/menu_products" android:title="Productos" app:showAsAction="never" />
+    <item android:id="@+id/menu_cart" android:title="Carrito" app:showAsAction="ifRoom" />
+    <item android:id="@+id/menu_blog" android:title="Blog" app:showAsAction="never" />
+    <item android:id="@+id/menu_about" android:title="Nosotros" app:showAsAction="never" />
+    <item android:id="@+id/menu_contact" android:title="Contacto" app:showAsAction="never" />
+    <item android:id="@+id/menu_login" android:title="Login" app:showAsAction="never" />
+    <item android:id="@+id/menu_register" android:title="Registro" app:showAsAction="never" />
+    <item android:id="@+id/menu_admin" android:title="Admin" app:showAsAction="never" />
+</menu>

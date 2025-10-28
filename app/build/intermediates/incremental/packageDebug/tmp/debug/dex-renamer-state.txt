@@ -1,4 +1,4 @@
-#Tue Oct 28 05:14:02 CLST 2025
+#Tue Oct 28 06:05:27 CLST 2025
 base.0=C\:\\Users\\56989\\Desktop\\PROGRA\\semestre 4\\appmoviles parcial2\\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\56989\\Desktop\\PROGRA\\semestre 4\\appmoviles parcial2\\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\56989\\Desktop\\PROGRA\\semestre 4\\appmoviles parcial2\\DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex

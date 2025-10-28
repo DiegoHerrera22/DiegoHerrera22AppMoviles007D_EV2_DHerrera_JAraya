@@ -109,6 +109,8 @@
     <string name="mtrl_picker_toggle_to_year_selection">Tryck för att byta till årsvy</string>
     <string name="mtrl_timepicker_cancel">Avbryt</string>
     <string name="mtrl_timepicker_confirm">OK</string>
+    <string msgid="6301633601645100427" name="nav_app_bar_navigate_up_description">"Navigera uppåt"</string>
+    <string msgid="7456070600745802113" name="nav_app_bar_open_drawer_description">"Öppna navigeringspanelen"</string>
     <string name="password_toggle_content_description">Visa lösenord</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Sök"</string>
     <string name="searchview_clear_text_content_description">Rensa text</string>

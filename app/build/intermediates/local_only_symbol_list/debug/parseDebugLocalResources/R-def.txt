@@ -34,6 +34,15 @@ id inputRut
 id listViewBackOffice
 id listViewCart
 id listViewProducts
+id menu_about
+id menu_admin
+id menu_blog
+id menu_cart
+id menu_contact
+id menu_home
+id menu_login
+id menu_products
+id menu_register
 id textDescription
 id textFailure
 id textName
@@ -45,6 +54,7 @@ id textRegister
 id textSuccess
 id textTitle
 id textTotal
+id toolbar
 layout activity_add_product
 layout activity_back_office
 layout activity_cart
@@ -56,6 +66,7 @@ layout activity_register
 layout activity_success
 layout item_cart
 layout item_product
+menu main_menu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

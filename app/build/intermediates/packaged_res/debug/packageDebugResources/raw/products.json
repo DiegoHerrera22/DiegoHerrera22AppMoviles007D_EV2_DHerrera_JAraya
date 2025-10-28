@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Pastel de Chocolate",
+    "description": "Delicioso pastel de chocolate, ideal para celebraciones y compartir con la familia.",
+    "price": 12000.0,
+    "image": "ic_launcher_foreground"
+  },
+  {
+    "id": 2,
+    "name": "Torta Tres Leches",
+    "description": "Torta húmeda preparada con tres tipos de leche, cubierta con crema y fruta fresca.",
+    "price": 15000.0,
+    "image": "ic_launcher_foreground"
+  },
+  {
+    "id": 3,
+    "name": "Pie de Limón",
+    "description": "Pie con base de galleta, relleno de limón y merengue flambeado.",
+    "price": 8000.0,
+    "image": "ic_launcher_foreground"
+  },
+  {
+    "id": 4,
+    "name": "Cupcakes Vainilla",
+    "description": "Pack de 6 cupcakes de vainilla con cobertura de crema de mantequilla.",
+    "price": 5000.0,
+    "image": "ic_launcher_foreground"
+  },
+  {
+    "id": 5,
+    "name": "Torta de Zanahoria",
+    "description": "Torta de zanahoria con nueces, especias y glaseado de queso crema.",
+    "price": 13000.0,
+    "image": "ic_launcher_foreground"
+  }
+]

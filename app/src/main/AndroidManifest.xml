@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.pasteleria1000sabores">
 
     <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+        android:label="Pastelería 1000 Sabores"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya">
+        android:theme="@style/Theme.Pasteleria1000Sabores">
+        <!-- Activity principal que arranca la aplicación -->
+        <activity android:name=".LoginActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Declaración de las demás pantallas -->
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".CatalogActivity" />
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".SuccessActivity" />
+        <activity android:name=".FailureActivity" />
+        <activity android:name=".BackOfficeActivity" />
+        <activity android:name=".AddProductActivity" />
     </application>
-
 </manifest>

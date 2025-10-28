@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Base application theme. We use AppCompat's NoActionBar theme because
+        implementamos nuestras propias barras de título. Desde API 16 es
+        compatible.
+    -->
+    <style name="Theme.Pasteleria1000Sabores" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Personaliza colores principales -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+    </style>
+</resources>

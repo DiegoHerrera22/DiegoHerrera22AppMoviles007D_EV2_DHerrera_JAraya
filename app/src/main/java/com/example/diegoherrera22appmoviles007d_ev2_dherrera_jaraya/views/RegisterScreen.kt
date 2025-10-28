@@ -15,6 +15,11 @@ import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.viewmodel.Au
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.viewmodel.RegionViewModel
 
 
+private fun isAllowedEmail(email: String): Boolean {
+    val e = email.trim().lowercase()
+    return e.endsWith("@duoc.cl") || e.endsWith("@admin.cl")
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegisterScreen(navController: NavController, viewModel: AuthViewModel, regionViewModel: RegionViewModel = viewModel()) {
@@ -28,6 +33,10 @@ fun RegisterScreen(navController: NavController, viewModel: AuthViewModel, regio
     var password by remember { mutableStateOf("") }
 
     // datos desde JSON (assets) via ViewModel/Repository
+
+    // error específico del email
+    var emailError by remember { mutableStateOf<String?>(null) }
+
     val regiones = remember { regionViewModel.regiones }
     val comunas = remember(region) { regionViewModel.comunasDe(region) }
 
@@ -132,8 +141,18 @@ fun RegisterScreen(navController: NavController, viewModel: AuthViewModel, regio
         }
 
         OutlinedTextField(
-            value = email, onValueChange = { email = it },
-            label = { Text("Email") }, modifier = Modifier.fillMaxWidth()
+            value = email,
+            onValueChange = {
+                email = it
+                emailError = null
+            },
+            isError = emailError != null,
+            label = { Text("Email") },
+            supportingText = {
+                if (emailError != null) Text(emailError!!)
+                else Text("Solo @duoc.cl o @admin.cl")
+            },
+            modifier = Modifier.fillMaxWidth()
         )
         OutlinedTextField(
             value = password, onValueChange = { password = it },
@@ -144,6 +163,9 @@ fun RegisterScreen(navController: NavController, viewModel: AuthViewModel, regio
 
         Button(
             onClick = {
+                if (!isAllowedEmail(email)) {
+                    emailError = "Solo se permiten correos @duoc.cl o @admin.cl"
+                    return@Button}
                 val rut = rutText.toIntOrNull() ?: 0
                 viewModel.registrar(
                     nombre = nombre,

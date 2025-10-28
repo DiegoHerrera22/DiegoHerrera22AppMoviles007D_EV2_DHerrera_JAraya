@@ -38,13 +38,25 @@ fun LoginScreen(navController: NavController, viewModel: AuthViewModel) {
 
         Button(
             onClick = {
-                if (viewModel.login(email, password)) {
-                    navController.navigate("home/$email") {
-                        popUpTo("login") { inclusive = true }
-                        launchSingleTop = true
+                val ok = viewModel.login(email, password)
+                if (!ok) return@Button
+
+                val e = email.trim().lowercase()
+                val destination = when {
+                    e.endsWith("@admin.cl") -> "backoffice"
+                    e.endsWith("@duoc.cl")  -> "home/$email"   // mantiene tu ruta con parámetro
+                    else -> {
+                        // si llega acá, el usuario existe pero con dominio no permitido
+                        // (idealmente esto no pasará porque RegisterScreen ya lo bloquea)
+                        viewModel.mensaje.value = "Dominio no permitido (usa @duoc.cl o @admin.cl)"
+                        return@Button
                     }
                 }
+                navController.navigate(destination) {
+                    popUpTo("login") { inclusive = true }
+                }
             }
+
         ) {
             Text("Entrar")
         }

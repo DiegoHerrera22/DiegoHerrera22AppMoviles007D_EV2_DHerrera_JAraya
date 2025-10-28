@@ -28,6 +28,8 @@ import androidx.navigation.navigation
 import androidx.navigation.navArgument
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.CartScreen
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.CheckoutResultTabsScreen
+import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.backoffice.AddProductScreen
+import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.backoffice.BackOfficeListScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -88,6 +90,18 @@ fun AppNavigation() {
                 val id = backStackEntry.arguments?.getString("id") ?: return@composable
                 ProductDetailScreen(productId = id, navController = navController, parentEntry = parentEntry)
             }
+            // Back Office (solo visual): lista de productos reutilizando el mismo JSON
+            composable("backoffice") {
+                BackOfficeListScreen(
+                    onAddProduct = { navController.navigate("backoffice/add") }
+                )
+            }
+
+            // Pantalla para Agregar Producto (solo UI, sin persistencia)
+            composable("backoffice/add") {
+                AddProductScreen(navController = navController)
+            }
+
             composable("cart") { backStackEntry ->
                 val parentEntry = remember(backStackEntry) { navController.getBackStackEntry("shop") }
                 CartScreen(navController = navController, parentEntry = parentEntry)

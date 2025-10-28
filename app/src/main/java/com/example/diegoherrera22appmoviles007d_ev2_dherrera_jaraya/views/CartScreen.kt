@@ -104,9 +104,11 @@ fun CartScreen(
                 }
 
                 Button(
-                    onClick = { /* TODO: confirmar pedido */ },
+                    onClick = { navController.navigate("checkout/results") },
                     modifier = Modifier.fillMaxWidth()
-                ) { Text("Finalizar compra") }
+                ) {
+                    Text("Finalizar compra")
+                }
             }
         }
     }

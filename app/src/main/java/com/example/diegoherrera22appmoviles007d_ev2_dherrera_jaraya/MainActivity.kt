@@ -27,6 +27,7 @@ import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.Produc
 import androidx.navigation.navigation
 import androidx.navigation.navArgument
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.CartScreen
+import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.CheckoutResultTabsScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,6 +91,11 @@ fun AppNavigation() {
             composable("cart") { backStackEntry ->
                 val parentEntry = remember(backStackEntry) { navController.getBackStackEntry("shop") }
                 CartScreen(navController = navController, parentEntry = parentEntry)
+            }
+
+            composable("checkout/results") { backStackEntry ->
+                val parentEntry = remember(backStackEntry) { navController.getBackStackEntry("shop") }
+                CheckoutResultTabsScreen(navController = navController, parentEntry = parentEntry)
             }
         }
     }

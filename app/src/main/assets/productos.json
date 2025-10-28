@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Torta de Chocolate",
+    "descripcion": "Deliciosa torta de chocolate con relleno de crema.",
+    "precio": 15000.0,
+    "imagen": "https://example.com/chocolate.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Cheesecake de Frutilla",
+    "descripcion": "Suave cheesecake con frutillas frescas.",
+    "precio": 12000.0,
+    "imagen": "https://example.com/cheesecake.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Pie de Limón",
+    "descripcion": "Clásico pie de limón con merengue.",
+    "precio": 10000.0,
+    "imagen": "https://example.com/piedelimon.jpg"
+  }
+]

@@ -1,3 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DiegoHerrera22AppMoviles007D_EV2_DHerrera_JAraya</string>
+    <!-- String resources for the Pastelería 1000 Sabores application.  Centralising
+         strings here makes it easier to support localisation in the future. -->
+    <string name="app_name">Pastelería 1000 Sabores</string>
+
+    <!-- Screen titles -->
+    <string name="title_login">Iniciar sesión</string>
+    <string name="title_register">Registrarse</string>
+    <string name="title_catalogo">Catálogo</string>
+    <string name="title_detalle">Detalle del producto</string>
+    <string name="title_cart">Carrito</string>
+    <string name="title_success">Compra Exitosa</string>
+    <string name="title_failure">Compra Rechazada</string>
+    <string name="title_backoffice_list">Lista de Productos (Back Office)</string>
+    <string name="title_backoffice_new">Nuevo Producto</string>
+
+    <!-- Common labels -->
+    <string name="label_email">Correo electrónico</string>
+    <string name="label_password">Contraseña</string>
+    <string name="label_name">Nombre</string>
+    <string name="label_rut">RUT</string>
+    <string name="label_price">Precio</string>
+    <string name="label_description">Descripción</string>
+    <string name="label_add_to_cart">Agregar al carrito</string>
+    <string name="label_buy">Comprar</string>
+    <string name="label_back">Atrás</string>
+
+    <!-- Messages -->
+    <string name="msg_login_success">Inicio de sesión exitoso</string>
+    <string name="msg_login_error">Credenciales inválidas</string>
+    <string name="msg_register_success">Registro exitoso</string>
+    <string name="msg_register_error">Error al registrarse</string>
+    <string name="msg_empty_cart">Tu carrito está vacío</string>
+    <string name="msg_purchase_success">¡Felicidades! Tu compra fue exitosa.</string>
+    <string name="msg_purchase_failure">Lo sentimos, la compra fue rechazada.</string>
 </resources>

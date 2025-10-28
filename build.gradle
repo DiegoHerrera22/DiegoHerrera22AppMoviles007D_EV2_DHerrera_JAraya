@@ -1,0 +1,41 @@
+// Top‑level build file where you can add configuration options common to all
+// sub‑projects/modules. This file uses Groovy syntax rather than the Kotlin
+// DSL to keep things familiar for most Android developers.  If you prefer
+// Kotlin scripts you can migrate this file to build.gradle.kts.
+
+buildscript {
+    ext {
+        // Versions for the plugins and libraries used in the project.  Keeping
+        // version numbers in one place makes it easy to upgrade dependencies
+        // across the whole project.
+        kotlinVersion = '1.9.10'
+        androidGradlePlugin = '8.1.1'
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle plugin.  This is required to build any Android
+        // application.  See https://developer.android.com/studio/releases/gradle-plugin
+        classpath "com.android.tools.build:gradle:$androidGradlePlugin"
+
+        // Kotlin Gradle plugin.  This enables Kotlin support and is required
+        // whenever you use Kotlin in your project.  See https://kotlinlang.org/
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// This task cleans the build directory.  It can be executed from the command
+// line via `./gradlew clean` and is added here so that the root project
+// participates in the clean lifecycle.
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

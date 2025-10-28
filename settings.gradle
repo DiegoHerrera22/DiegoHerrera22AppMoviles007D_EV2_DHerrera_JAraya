@@ -1,0 +1,6 @@
+rootProject.name = "Pasteleria1000Sabores"
+
+// Include the app module.  This is the only module in the project for now, but
+// additional modules (e.g. shared libraries) can be added later by adding
+// further include statements here.
+include(":app")

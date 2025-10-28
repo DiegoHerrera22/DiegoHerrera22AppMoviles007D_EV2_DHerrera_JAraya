@@ -1,0 +1,108 @@
+// Module build file for the Android application.  This file configures the
+// Android plugin, enabling Jetpack Compose and including dependencies used
+// throughout the app.  See the official documentation for more details on
+// the available options: https://developer.android.com/build
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.pasteleria1000sabores'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pasteleria1000sabores"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        // Enable vector drawables support for older API levels.
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+    buildTypes {
+        release {
+            // Turn off code shrinking for now.  You can enable ProGuard or
+            // R8 later when the project is stabilised and you want to
+            // optimise the APK.
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        // Enable Jetpack Compose.
+        compose true
+    }
+
+    composeOptions {
+        // Use the latest stable Compose compiler extension.  If you upgrade
+        // Compose UI, make sure to update this version as well.
+        kotlinCompilerExtensionVersion '1.5.2'
+    }
+
+    packagingOptions {
+        resources {
+            // Exclude common license files to avoid packaging conflicts.
+            excludes += ['/META-INF/{AL2.0,LGPL2.1}']
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+
+    // AndroidX core and lifecycle support.
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.activity:activity-compose:1.7.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2'
+
+    // Jetpack Compose UI libraries.
+    implementation 'androidx.compose.ui:ui:1.5.2'
+    implementation 'androidx.compose.ui:ui-tooling-preview:1.5.2'
+    implementation 'androidx.compose.material:material:1.5.0'
+    implementation 'androidx.compose.material3:material3:1.1.1'
+    implementation 'androidx.compose.foundation:foundation:1.5.2'
+
+    // Navigation for Compose.
+    implementation 'androidx.navigation:navigation-compose:2.7.3'
+
+    // Room database for local persistence.
+    implementation 'androidx.room:room-runtime:2.6.0'
+    kapt 'androidx.room:room-compiler:2.6.0'
+    implementation 'androidx.room:room-ktx:2.6.0'
+
+    // DataStore for simple key–value persistence (e.g. session state).
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+
+    // Coroutines support for asynchronous operations.
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    // Coil for image loading in Compose.
+    implementation 'io.coil-kt:coil-compose:2.4.0'
+
+    // Testing libraries can be added here if you plan to write unit or UI tests.
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.5.2'
+    debugImplementation 'androidx.compose.ui:ui-tooling:1.5.2'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest:1.5.2'
+}

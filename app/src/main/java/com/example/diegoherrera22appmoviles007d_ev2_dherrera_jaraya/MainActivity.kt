@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -21,6 +22,7 @@ import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.HomeSc
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.LoginScreen
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.RegisterScreen
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.navigation
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views.ProductDetailScreen
 
 class MainActivity : ComponentActivity() {
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AppNavigation() // punto de entrada de la app
+                    AppNavigation()
                 }
             }
         }
@@ -47,7 +49,7 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "login" // pantalla inicial
+        startDestination = "login"
     ) {
         composable("login") {
             LoginScreen(navController = navController, viewModel = authViewModel)
@@ -57,19 +59,31 @@ fun AppNavigation() {
             RegisterScreen(navController = navController, viewModel = authViewModel)
         }
 
-        composable(
-            "home/{email}",
-            arguments = listOf(navArgument("email") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val email = backStackEntry.arguments?.getString("email")
-            HomeScreen(email = email, navController = navController)
-        }
-        composable(
-            route = "product/{id}",
-            arguments = listOf(navArgument("id") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val id = backStackEntry.arguments?.getString("id") ?: return@composable
-            ProductDetailScreen(productId = id, navController = navController) //  nueva pantalla del detalle del producto
+        // Graph padre para compartir ViewModel entre Home y Detalle
+        navigation(startDestination = "home/{email}", route = "shop") {
+
+            composable(
+                route = "home/{email}",
+                arguments = listOf(navArgument("email") { type = NavType.StringType })
+            ) { backStackEntry ->
+                // parentEntry del graph "shop" recordado con clave NavBackStackEntry
+                val parentEntry = androidx.compose.runtime.remember(backStackEntry) {
+                    navController.getBackStackEntry("shop")
+                }
+                val email = backStackEntry.arguments?.getString("email")
+                HomeScreen(email = email, navController = navController, parentEntry = parentEntry)
+            }
+
+            composable(
+                route = "product/{id}",
+                arguments = listOf(navArgument("id") { type = NavType.StringType })
+            ) { backStackEntry ->
+                val parentEntry = androidx.compose.runtime.remember(backStackEntry) {
+                    navController.getBackStackEntry("shop")
+                }
+                val id = backStackEntry.arguments?.getString("id") ?: return@composable
+                ProductDetailScreen(productId = id, navController = navController, parentEntry = parentEntry)
+            }
         }
     }
 }

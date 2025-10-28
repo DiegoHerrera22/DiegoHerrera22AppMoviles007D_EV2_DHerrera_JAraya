@@ -1,4 +1,8 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views
+
+
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -17,17 +21,25 @@ import java.text.NumberFormat
 import java.util.Locale
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(email: String?,navController: NavController) {
+fun HomeScreen(
+    email: String?,
+    navController: NavController,
+    parentEntry: androidx.navigation.NavBackStackEntry
+) {
+    // BackStackEntry del nav-graph padre "shop" para compartir el mismo ViewModel
+    val backEntry = navController.currentBackStackEntry
+    val parentEntry = remember(backEntry) { navController.getBackStackEntry("shop") }
 
-    val catalogVM: CatalogViewModel = viewModel()
+    // Usa la MISMA instancia de CatalogViewModel en Home y Detalle
+    val catalogVM: CatalogViewModel = viewModel(parentEntry)
+
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // Estado para saber qué producto se agregó últimamente
+    // Estado para último producto agregado (ya con tu tipo Producto)
     var lastAdded by remember { mutableStateOf<Producto?>(null) }
 
-    //  Cuando `lastAdded` cambia, se ejecuta este efecto y muestra el snackbar
+    // Mostrar snackbar cuando cambie lastAdded
     LaunchedEffect(lastAdded) {
         lastAdded?.let { product ->
             snackbarHostState.showSnackbar("Agregado: ${product.name}")
@@ -45,7 +57,9 @@ fun HomeScreen(email: String?,navController: NavController) {
                 actions = {
                     AssistChip(
                         onClick = { /* TODO: CartScreen */ },
-                        label = { Text("Carrito: ${catalogVM.itemsCount()} • ${money.format(catalogVM.totalCLP())}") }
+                        label = {
+                            Text("Carrito: ${catalogVM.itemsCount()} • ${money.format(catalogVM.totalCLP())}")
+                        }
                     )
                 }
             )
@@ -58,7 +72,6 @@ fun HomeScreen(email: String?,navController: NavController) {
                 .padding(inner)
                 .padding(16.dp)
         ) {
-
             if (!email.isNullOrBlank()) {
                 Text("Bienvenido, $email", style = MaterialTheme.typography.titleMedium)
                 Spacer(Modifier.height(8.dp))
@@ -72,15 +85,14 @@ fun HomeScreen(email: String?,navController: NavController) {
             ) {
                 items(catalogVM.products, key = { it.id }) { p ->
                     ProductCard(
-                        product = p,
+                        product = p, // <- Producto
                         onAddToCart = { added ->
                             catalogVM.addToCart(added)
-
-                            // Aquí actualizamos el estado
                             lastAdded = added
                         },
                         onClick = { clicked ->
-                            navController.navigate("product/${clicked.id}")   // navegar al detalle
+                            // Estás dentro del graph "shop", así que esta ruta funciona:
+                            navController.navigate("product/${clicked.id}")
                         },
                         modifier = Modifier.fillMaxWidth()
                     )

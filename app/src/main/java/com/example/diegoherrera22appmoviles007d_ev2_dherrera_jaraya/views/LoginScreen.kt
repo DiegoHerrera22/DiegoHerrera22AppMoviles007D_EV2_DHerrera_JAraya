@@ -8,6 +8,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.viewmodel.AuthViewModel
+import android.net.Uri
 
 @Composable
 fun LoginScreen(navController: NavController, viewModel: AuthViewModel) {
@@ -35,11 +36,16 @@ fun LoginScreen(navController: NavController, viewModel: AuthViewModel) {
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Button(onClick = {
-            if (viewModel.login(email, password)) {
-                navController.navigate("home/$email")
+        Button(
+            onClick = {
+                if (viewModel.login(email, password)) {
+                    navController.navigate("home/$email") {
+                        popUpTo("login") { inclusive = true }
+                        launchSingleTop = true
+                    }
+                }
             }
-        }) {
+        ) {
             Text("Entrar")
         }
 

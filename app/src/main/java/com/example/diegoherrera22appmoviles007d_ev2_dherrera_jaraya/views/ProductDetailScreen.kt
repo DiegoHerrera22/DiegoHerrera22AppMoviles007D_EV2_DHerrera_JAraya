@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.views
 
 import androidx.compose.foundation.Image
@@ -11,29 +13,31 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavBackStackEntry
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.repository.ProductRepository
 import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.viewmodel.CatalogViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.model.Producto
 import java.text.NumberFormat
 import java.util.Locale
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 
-
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductDetailScreen(
     productId: String,
-    navController: NavController
+    navController: NavController,
+    parentEntry: NavBackStackEntry
+
 ) {
-    val catalogVM: CatalogViewModel = viewModel()
+
+    val catalogVM: CatalogViewModel = viewModel(parentEntry)
+
     val product = remember(productId) { ProductRepository.getById(productId) }
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // 👇 Estado: último producto agregado
-    var lastAdded by remember { mutableStateOf<com.example.diegoherrera22appmoviles007d_ev2_dherrera_jaraya.model.Producto?>(null) }
-
-    // 👇 Efecto: cuando cambie lastAdded, mostramos el snackbar
+    // Estado + efecto para snackbar (como en Home)
+    var lastAdded by remember { mutableStateOf<Producto?>(null) }
     LaunchedEffect(lastAdded) {
         lastAdded?.let { snackbarHostState.showSnackbar("Agregado: ${it.name}") }
     }
@@ -56,13 +60,9 @@ fun ProductDetailScreen(
             }
         ) { inner ->
             Box(
-                Modifier
-                    .fillMaxSize()
-                    .padding(inner),
+                Modifier.fillMaxSize().padding(inner),
                 contentAlignment = Alignment.Center
-            ) {
-                Text("No encontramos este producto.")
-            }
+            ) { Text("No encontramos este producto.") }
         }
         return
     }
@@ -105,13 +105,10 @@ fun ProductDetailScreen(
             Button(
                 onClick = {
                     catalogVM.addToCart(product)
-
-                    lastAdded = product
+                    lastAdded = product   //
                 },
                 modifier = Modifier.fillMaxWidth()
-            ) {
-                Text("Agregar al carrito")
-            }
+            ) { Text("Agregar al carrito") }
         }
     }
 }
